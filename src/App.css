@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit&display=swap");
+
+body {
+  font-family: "Outfit", sans-serif;
+}
+
+.wrapper {
+  margin: 0 15%;
+}
+
+.add-item-icon {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.add-item-icon img {
+  height: 40px;
+  width: 40px;
+}
+
+.item-table {
+  background-color: #ececec;
+  padding: 20px;
+  margin: 20px 0;
+}
+
+.item-row {
+  display: grid;
+  grid-template-columns: 2fr 2fr 0.5fr 0.5fr 0.5fr;
+  margin: 2px;
+  background-color: #d1d1d1;
+  padding: 0 10px;
+}
+
+.item-row p:nth-child(3) {
+  cursor: pointer;
+}
+.item-row p:nth-child(4) {
+  cursor: pointer;
+}
+.item-row p:nth-child(5) {
+  cursor: pointer;
+}
+
+.item-row p img {
+  height: 27px;
+  width: 27px;
+}
