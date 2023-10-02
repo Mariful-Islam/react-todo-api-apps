@@ -32,8 +32,17 @@ def createItem(request):
 @api_view(['GET', 'PUT'])
 def updateItem(request, id):
     item = Item.objects.get(id=id)
+    ser = ItemSerializer(item, many=False)
     serializer = ItemSerializer(item, data=request.data)
     if serializer.is_valid():
         serializer.save()
         return Response(serializer.data)
-    return Response('Error')
+    return Response(ser.data)
+
+
+@api_view(['GET', 'DELETE'])
+def deleteItem(request, id):
+    item = Item.objects.get(id=id)
+    item.delete()
+    serializer = ItemSerializer(item, many=False)
+    return Response("{} was deleted".format(item))
